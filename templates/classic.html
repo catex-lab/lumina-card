@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+  Postcard Studio · 内置 classic 风格版式（成品级）
+  使用方式：
+    1) 把 {{IMAGE}} 换成清理+调色后的底图文件名（与本 html 同目录）
+    2) 把 {{TITLE}} {{EN}} {{SUB}} 换成文案
+    3) 用浏览器打开 / 截图 / 打印（@page 已设 A5）
+  配色：主底 #FBF7F0 · 边框 #C9A24B · 文字 #3A2E25 · 强调 #B5462F
+-->
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}} · 明信片</title>
+<style>
+  @page { size: A5; margin: 0; }
+  body {
+    margin: 0;
+    background: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    font-family: "Songti SC", "STSong", "SimSun", serif;
+  }
+  .postcard {
+    width: 600px;
+    background: #FBF7F0;
+    border: 3px solid #C9A24B;
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  .photo {
+    width: 100%;
+    display: block;
+  }
+  .caption {
+    text-align: center;
+    margin-top: 14px;
+    color: #3A2E25;
+  }
+  .title {
+    font-size: 36px;
+    letter-spacing: 6px;
+  }
+  .en {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-top: 6px;
+    color: #3A2E25;
+  }
+  .sub {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #B5462F;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+  <div class="postcard">
+    <img class="photo" src="{{IMAGE}}" alt="{{TITLE}}">
+    <div class="caption">
+      <div class="title">{{TITLE}}</div>
+      <div class="en">{{EN}}</div>
+      <div class="sub">{{SUB}}</div>
+    </div>
+  </div>
+</body>
+</html>
