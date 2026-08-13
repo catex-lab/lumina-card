@@ -1,43 +1,50 @@
 # 浮光卡片 · Lumina Card
 
-> Turn any photo into a printable, shareable postcard — via a 6-step pipeline.
+> 把任意照片，经六道工序，变成有设计感、可直接印刷或分享的明信片。
 
-把任意照片，经六道工序，变成有设计感、可直接印刷或分享的明信片。
+[English](./README.en.md) ｜ 简体中文
 
-## ✨ Features
+## ✨ 特性
 
-- **6-step pipeline**: analyze → lock subject → retouch → color → design → QC
-- **Built-in styles**: `classic` (warm white + gold edge, default), `silhouette` (two-tone flat)
-- **Extensible**: drop `<name>.md` (+ optional `<name>.html`) into `templates/` — no core changes needed
-- **Bilingual**: triggers in both Chinese and English
+- **六道工序流水线**：识别原图 → 锁定主体 → 高清清理 → 高级调色 → 套用模板设计 → 最终验收
+- **内置成品风格**：`classic`（暖白底 + 细金边，默认）、`silhouette`（双色扁平剪影）
+- **可扩展**：往 `templates/` 放一个 `<name>.md`（+ 可选 `<name>.html`）即可新增风格，无需改动核心代码
+- **双语触发**：中英文指令都能唤起本 skill
 
-## 📦 Install
+## 📦 安装
 
 ```bash
-# User-level (global, recommended)
+# 用户级（全局可用，推荐）
 git clone https://github.com/catex-lab/lumina-card.git ~/.workbuddy/skills/lumina-card
 
-# Project-level
-git clone https://github.com/catex-lab/lumina-card.git <your-project>/.workbuddy/skills/lumina-card
+# 项目级（仅当前项目可用）
+git clone https://github.com/catex-lab/lumina-card.git <你的项目>/.workbuddy/skills/lumina-card
 ```
 
-## 🚀 Usage
+## 🚀 使用
 
-1. Upload a photo in WorkBuddy.
-2. Say: `做成明信片` / `postcard` / `生成贺卡`.
-3. The skill runs the full pipeline. To pick a style: `用 silhouette 模板` / `use classic template`.
+1. 在 WorkBuddy 里上传一张照片。
+2. 说「做成明信片 / 生成贺卡 / postcard」。
+3. Skill 会自动跑完整流水线。要指定风格时说「用 silhouette 模板 / 用 classic 模板」。
 
-## ⚠️ Limits
+## 🎨 内置风格
 
-- ImageGen costs ~5–10 credits per generated image.
-- Output short edge is 1024px; supersample to ≥1600px before printing.
+| 风格 | 说明 | 版式 |
+| --- | --- | --- |
+| `classic` | 暖白底 + 细金边，明亮温暖，适合绝大多数照片 | `templates/classic.html` |
+| `silhouette` | 双色扁平剪影、厚重造型，适合地标与天际线 | `templates/silhouette.html` |
 
-## 🧩 Add a new style
+## 🧩 新增风格
 
-1. Create `templates/<name>.md` (style spec: mood, palette, fonts, layout, ImageGen prompt).
-2. Optional: create `templates/<name>.html` (reusable layout with `{{IMAGE}}` etc. placeholders).
-3. The pipeline auto-detects it — no need to edit `SKILL.md` or `prompts/`.
+1. 创建 `templates/<name>.md`：风格规范（情绪、配色、字体、排版、ImageGen 提示词）。
+2. 可选：创建 `templates/<name>.html`：可复用版式（含 `{{IMAGE}}` 等占位符）。
+3. 流水线自动识别，无需修改 `SKILL.md` 或 `prompts/`。
 
-## 📄 License
+## ⚠️ 已知限制
+
+- ImageGen 出图约消耗 5–10 credits/张。
+- 产物短边 1024px，如需印刷请先超分至 ≥1600px。
+
+## 📄 许可证
 
 MIT © 2026 catex-lab
