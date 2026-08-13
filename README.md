@@ -35,7 +35,6 @@ git clone https://github.com/catex-lab/lumina-card.git <你的项目>/.workbuddy
 | --- | --- | --- |
 | ![原图](./showcase/source-shanghai.jpg) | ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) |
 
-> 更多示例原图见 [`showcase/source-bund.jpg`](./showcase/source-bund.jpg)。
 
 ## 🎨 内置风格
 
@@ -59,4 +58,4 @@ git clone https://github.com/catex-lab/lumina-card.git <你的项目>/.workbuddy
 
 **Skill 代码**：MIT © 2026 catex-lab
 
-**示例照片版权**：`showcase/` 目录下的所有示例照片（`source-shanghai.jpg` / `source-bund.jpg` 及由其生成的成品图）版权归拍摄者 **catex-lab** 所有（© 2026 catex-lab），仅用于本仓库效果展示，**禁止擅自商用、转载或二次分发**。如需使用请先联系作者。
+**示例照片版权**：`showcase/` 目录下的示例照片（`source-shanghai.jpg` 及由其生成的成品图）版权归拍摄者 **catex-lab** 所有（© 2026 catex-lab），仅用于本仓库效果展示，**禁止擅自商用、转载或二次分发**。如需使用请先联系作者。

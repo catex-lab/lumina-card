@@ -35,7 +35,6 @@ git clone https://github.com/catex-lab/lumina-card.git <your-project>/.workbuddy
 | --- | --- | --- |
 | ![source](./showcase/source-shanghai.jpg) | ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) |
 
-> Another sample source: [`showcase/source-bund.jpg`](./showcase/source-bund.jpg).
 
 ## 🎨 Built-in Styles
 
@@ -59,4 +58,4 @@ git clone https://github.com/catex-lab/lumina-card.git <your-project>/.workbuddy
 
 **Skill code**: MIT © 2026 catex-lab
 
-**Sample photo copyright**: All sample photos in `showcase/` (`source-shanghai.jpg` / `source-bund.jpg` and the postcards derived from them) are copyrighted by the photographer **catex-lab** (© 2026 catex-lab). They are provided solely for demonstrating this skill. **Commercial use, redistribution or re-posting without permission is prohibited.** Contact the author before any other use.
+**Sample photo copyright**: The sample photo in `showcase/` (`source-shanghai.jpg` and the postcards derived from it) is copyrighted by the photographer **catex-lab** (© 2026 catex-lab). It is provided solely for demonstrating this skill. **Commercial use, redistribution or re-posting without permission is prohibited.** Contact the author before any other use.
