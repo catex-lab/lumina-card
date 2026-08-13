@@ -6,7 +6,7 @@ English ｜ [简体中文](./README.md)
 
 ## ✨ Features
 
-- **7-step pipeline**: analyze → lock subject → composition engine (safe aspect-ratio) → retouch → color → design → QC
+- **7-step pipeline**: analyze → lock subject → composition+retouch (safe aspect-ratio + cleanup) → art transform (oil/watercolor/ink/sketch/illustration/vintage) → color → post (template + signature) → QC
 - **Built-in styles**: `classic` (warm white + gold edge, default), `silhouette` (two-tone flat), `sticker` (die-cut sticker)
 - **Extensible**: drop a `<name>.md` (+ optional `<name>.html`) into `templates/` — no core changes needed
 - **Bilingual**: triggers on both English and Chinese commands
@@ -53,7 +53,7 @@ git clone https://github.com/catex-lab/lumina-card.git <your-project>/.workbuddy
 ## ⚠️ Known Limits
 
 - ImageGen costs ~5–10 credits per generated image.
-- Output short edge is 1024px; supersample to ≥1600px before printing.
+- Output short edge is ≥1600px, meeting baseline print requirements.
 
 ## 📄 License
 
