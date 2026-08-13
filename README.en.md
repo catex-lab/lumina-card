@@ -27,6 +27,14 @@ git clone https://github.com/catex-lab/lumina-card.git <your-project>/.workbuddy
 2. Say: `postcard` / `做成明信片` / `生成贺卡`.
 3. The skill runs the full pipeline automatically. To pick a style, say: `use classic template` / `用 silhouette 模板`.
 
+## 🖼️ Showcase
+
+> Source: Shanghai · Oriental Pearl Tower skyline
+
+| `classic` (warm white + gold edge) | `silhouette` (two-tone flat) |
+| --- | --- |
+| ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) |
+
 ## 🎨 Built-in Styles
 
 | Style | Description | Layout |

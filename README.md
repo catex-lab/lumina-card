@@ -27,6 +27,14 @@ git clone https://github.com/catex-lab/lumina-card.git <你的项目>/.workbuddy
 2. 说「做成明信片 / 生成贺卡 / postcard」。
 3. Skill 会自动跑完整流水线。要指定风格时说「用 silhouette 模板 / 用 classic 模板」。
 
+## 🖼️ 效果展示
+
+> 原图：上海 · 东方明珠天际线
+
+| `classic`（暖白底细金边） | `silhouette`（双色扁平剪影） |
+| --- | --- |
+| ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) |
+
 ## 🎨 内置风格
 
 | 风格 | 说明 | 版式 |
