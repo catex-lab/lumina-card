@@ -2,14 +2,14 @@
 
 # 浮光卡片 · Lumina Card
 
-> 把任意照片，经六道工序，变成有设计感、可直接印刷或分享的明信片。
+> 把任意照片，经七道工序，变成有设计感、可直接印刷或分享的明信片。
 
 [English](./README.en.md) ｜ 简体中文
 
 ## ✨ 特性
 
-- **六道工序流水线**：识别原图 → 锁定主体 → 高清清理 → 高级调色 → 套用模板设计 → 最终验收
-- **内置成品风格**：`classic`（暖白底 + 细金边，默认）、`silhouette`（双色扁平剪影）
+- **七道工序流水线**：识别原图 → 锁定主体 → 构图引擎（比例安全转换）→ 高清清理 → 高级调色 → 套用模板设计 → 最终验收
+- **内置成品风格**：`classic`（暖白底 + 细金边，默认）、`silhouette`（双色扁平剪影）、`sticker`（贴纸风）
 - **可扩展**：往 `templates/` 放一个 `<name>.md`（+ 可选 `<name>.html`）即可新增风格，无需改动核心代码
 - **双语触发**：中英文指令都能唤起本 skill
 
@@ -33,9 +33,9 @@ git clone https://github.com/catex-lab/lumina-card.git <你的项目>/.workbuddy
 
 > 示例原图：上海 · 东方明珠天际线（照片版权归拍摄者所有，详见文末版权声明）
 
-| 原图 | `classic`（暖白底细金边） | `silhouette`（双色扁平剪影） |
-| --- | --- | --- |
-| ![原图](./showcase/source-shanghai.jpg) | ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) |
+| 原图 | `classic`（暖白底细金边） | `silhouette`（双色扁平剪影） | `sticker`（贴纸风） |
+| --- | --- | --- | --- |
+| ![原图](./showcase/source-shanghai.jpg) | ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) | ![sticker](./showcase/showcase-sticker.png) |
 
 
 ## 🎨 内置风格
@@ -44,6 +44,7 @@ git clone https://github.com/catex-lab/lumina-card.git <你的项目>/.workbuddy
 | --- | --- | --- |
 | `classic` | 暖白底 + 细金边，明亮温暖，适合绝大多数照片 | `templates/classic.html` |
 | `silhouette` | 双色扁平剪影、厚重造型，适合地标与天际线 | `templates/silhouette.html` |
+| `sticker` | 模切贴纸插画、干净纯色底、大圆角可爱风，适合旅行纪念与文创 | `templates/sticker.html` |
 
 ## 🧩 新增风格
 

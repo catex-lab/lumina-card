@@ -1,13 +1,13 @@
 # Lumina Card · 浮光卡片
 
-> Turn any photo into a printable, shareable postcard — via a 6-step pipeline.
+> Turn any photo into a printable, shareable postcard — via a 7-step pipeline.
 
 English ｜ [简体中文](./README.md)
 
 ## ✨ Features
 
-- **6-step pipeline**: analyze → lock subject → retouch → color → design → QC
-- **Built-in styles**: `classic` (warm white + gold edge, default), `silhouette` (two-tone flat)
+- **7-step pipeline**: analyze → lock subject → composition engine (safe aspect-ratio) → retouch → color → design → QC
+- **Built-in styles**: `classic` (warm white + gold edge, default), `silhouette` (two-tone flat), `sticker` (die-cut sticker)
 - **Extensible**: drop a `<name>.md` (+ optional `<name>.html`) into `templates/` — no core changes needed
 - **Bilingual**: triggers on both English and Chinese commands
 
@@ -31,9 +31,9 @@ git clone https://github.com/catex-lab/lumina-card.git <your-project>/.workbuddy
 
 > Sample source: Shanghai · Oriental Pearl Tower skyline (photo copyright reserved by the photographer — see License below)
 
-| Source | `classic` (warm white + gold edge) | `silhouette` (two-tone flat) |
-| --- | --- | --- |
-| ![source](./showcase/source-shanghai.jpg) | ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) |
+| Source | `classic` (warm white + gold edge) | `silhouette` (two-tone flat) | `sticker` (die-cut) |
+| --- | --- | --- | --- |
+| ![source](./showcase/source-shanghai.jpg) | ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) | ![sticker](./showcase/showcase-sticker.png) |
 
 
 ## 🎨 Built-in Styles
@@ -42,6 +42,7 @@ git clone https://github.com/catex-lab/lumina-card.git <your-project>/.workbuddy
 | --- | --- | --- |
 | `classic` | Warm white background with a fine gold edge — bright and safe for most photos | `templates/classic.html` |
 | `silhouette` | Two-tone flat silhouette, bold shapes — great for landmarks and skylines | `templates/silhouette.html` |
+| `sticker` | Die-cut sticker illustration on a clean solid background, big rounded corners — ideal for travel souvenirs and merch | `templates/sticker.html` |
 
 ## 🧩 Add a New Style
 

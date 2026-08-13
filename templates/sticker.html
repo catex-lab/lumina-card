@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+  Lumina Card · sticker 风格版式（占位符模板）
+  使用方式：
+    1) 把 {{IMAGE}} 换成贴纸风底图文件名（与本 html 同目录）
+    2) 把 {{EYEBROW}} {{TITLE}} {{EN}} {{SUB}} 换成文案
+    3) 把 {{BRANDMARK}} 换成 assets/brandmark.svg（复制到本 html 同目录或填绝对路径）
+    4) 用浏览器打开 / 截图 / 打印（@page 已设 A5）
+  风格：干净纯色底 · 圆润贴纸插画 · 可爱无衬线 · 大圆角卡片
+  配色：主底 #E8F5E9（薄荷奶油）· 文字 #3E4A42 · 强调 #FF8A65
+-->
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}} · 明信片</title>
+<style>
+  @page { size: A5; margin: 0; }
+  body {
+    margin: 0;
+    background: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .postcard {
+    width: 600px;
+    background: #E8F5E9;
+    border-radius: 28px;
+    padding: 28px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: inset 0 0 0 4px rgba(255,255,255,0.6);
+  }
+  /* Lumina Card 品牌签名：独立叠加层，右下页边，低调可读，不压主体/不抢标题 */
+  .lumina-brandmark {
+    position: absolute;
+    z-index: 5;
+    right: 22px;
+    bottom: 16px;
+    width: 112px;
+    height: auto;
+    opacity: .42;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    user-select: none;
+  }
+  .photo {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+  }
+  .caption {
+    text-align: center;
+    margin-top: 18px;
+    color: #3E4A42;
+  }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #81C784;
+    margin-bottom: 8px;
+  }
+  .title {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 4px;
+  }
+  .en {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-top: 6px;
+    color: #3E4A42;
+  }
+  .sub {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #FF8A65;
+    margin-top: 8px;
+  }
+  .decos {
+    position: absolute;
+    top: 22px;
+    left: 26px;
+    display: flex;
+    gap: 8px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #FF8A65;
+  }
+  .dot:nth-child(2) { background: #FFD54F; }
+  .dot:nth-child(3) { background: #81C784; }
+</style>
+</head>
+<body>
+  <div class="postcard">
+    <div class="decos"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    <img class="photo" src="{{IMAGE}}" alt="{{TITLE}}">
+    <div class="caption">
+      <div class="eyebrow">{{EYEBROW}}</div>
+      <div class="title">{{TITLE}}</div>
+      <div class="en">{{EN}}</div>
+      <div class="sub">{{SUB}}</div>
+    </div>
+    <img class="lumina-brandmark" src="{{BRANDMARK}}" alt="">
+  </div>
+</body>
+</html>

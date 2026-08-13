@@ -1,6 +1,6 @@
 ---
 name: lumina-card
-description: 把任意照片变成可印刷/可分享的明信片（中英双语 skill）。当用户上传一张图并说「做成明信片 / 生成贺卡 / 照片转明信片 / postcard / 旅行照做成卡片」时触发。流水线：识别原图 → 锁定主体 → 构图引擎(比例安全转换) → 高清清理 → 高级调色 → 套用模板设计 → 最终验收。Built-in styles: classic（暖白细金边）、silhouette（双色剪影）。
+description: 把任意照片变成可印刷/可分享的明信片（中英双语 skill）。当用户上传一张图并说「做成明信片 / 生成贺卡 / 照片转明信片 / postcard / 旅行照做成卡片」时触发。流水线：识别原图 → 锁定主体 → 构图引擎(比例安全转换) → 高清清理 → 高级调色 → 套用模板设计 → 最终验收。Built-in styles: classic（暖白细金边）、silhouette（双色剪影）、sticker（贴纸风）。
 agent_created: true
 license: MIT
 author: catex-lab
@@ -31,7 +31,7 @@ author: catex-lab
 ## 全局规则
 
 - **确认节点**：进入 `postcard.md` 之前，必须与用户确认两件事——① 锁定的主体；② 选用的模板。若用户早已明确指定（如「用 vintage 模板做我家猫」），可跳过确认直接执行。
-- **四套模板**见 `templates/`：`classic` / `silhouette` / `minimal` / `vintage`。用户未指定时默认 `classic`。
+- **内置成品模板**见 `templates/`：`classic`（默认）/ `silhouette` / `sticker`。另有候选风格 `kawaii` / `geometric` / `flat-vector` / `fashion` / `gongbi`（模板已备，尚未内置，按需启用）。用户未指定模板时默认 `classic`。
 - **分辨率底线**：所有生成产物短边 ≥ 1600px，满足基础印刷要求。
 - **文字文案**：标题/寄语默认用用户提供的文案；缺失时给出 2–3 个候选并请用户定，不擅自编造大段文字。
 - **质量门禁**：任何一道工序不达标，必须打回上一步或重做，绝不带着问题进下一关。
