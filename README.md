@@ -1,5 +1,3 @@
-# Lumina Card · 浮光卡片
-
 [![Listed on CATAITO](https://img.shields.io/badge/Listed%20on-CATAITO-6C5CE7?style=flat-square)](https://cataito.com/en/skills/lumina-card)
 
 # 浮光卡片 · Lumina Card
