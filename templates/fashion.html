@@ -116,13 +116,19 @@
       z-index: 6;
       right: 48px;
       bottom: 40px;
-      width: 128px;
-      height: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
       opacity: .42;
       mix-blend-mode: multiply;
       pointer-events: none;
       user-select: none;
+      font-family: Georgia, 'Playfair Display', 'Times New Roman', serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #3C3834;
     }
+    .lumina-brandmark img { width: 18px; height: 18px; display: block; }
   </style>
 </head>
 <body>
@@ -137,7 +143,10 @@
       <div class="divider"></div>
       <div class="sub">{{SUB}}</div>
     </div>
-    <img class="lumina-brandmark" src="{{BRANDMARK}}" alt="">
+    <div class="lumina-brandmark">
+      <img src="{{BRANDMARK}}" alt="">
+      <span class="brandmark-text">{{SIGNATURE}}</span>
+    </div>
   </div>
 </body>
 </html>

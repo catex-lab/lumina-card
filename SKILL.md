@@ -23,7 +23,7 @@ author: catex-lab
 3. `prompts/composition-engine.md` — 构图引擎：把任意比例原图安全转换为目标比例（默认 2:3），主体关键部分 100% 不被裁掉；优先无损安全裁切，不足则 AI 扩图
 4. `prompts/retouch.md` — 高清 / 清理：在构图锁定图上放大、降噪、去干扰物、校正（不再做比例裁切）
 5. `prompts/color.md` — 高级调色：建立统一、有情绪的色调，服务整体调性
-6. `prompts/postcard.md` — 明信片设计：套用模板、排版、加文字与边框，并叠加 Lumina Card 品牌签名（见 `prompts/brand-mark.md`）
+6. `prompts/postcard.md` — 明信片设计：套用模板、排版、加文字与边框，并叠加用户自定义签名（见 `prompts/brand-mark.md`，署名来自 `{{SIGNATURE}}`，缺失回退 `Lumina Card`）
 7. `prompts/qc.md` — 最终验收：逐项核对，不达标打回对应工序
 
 每一道工序读取上一道工序的产物，输出结构化结果给下一道。**上一道不达标，绝不允许进下一道。**
@@ -36,7 +36,7 @@ author: catex-lab
 - **文字文案**：标题/寄语默认用用户提供的文案；缺失时给出 2–3 个候选并请用户定，不擅自编造大段文字。
 - **质量门禁**：任何一道工序不达标，必须打回上一步或重做，绝不带着问题进下一关。
 - **一次只讲一个点**：每张明信片主体唯一、明确，不贪多。
-- **品牌签名（强制）**：成品必须叠加 Lumina Card 品牌签名作为独立设计层（`assets/brandmark.svg`），低调、可读、不压主体、不与主标题竞争；详见 `prompts/brand-mark.md`。
+- **用户签名（强制）**：成品必须叠加用户自定义署名作为独立设计层——默认占位 `{{SIGNATURE}}`（用户昵称/名称/工作室，缺失时回退 `Lumina Card`）；可选前缀光圈图标 `{{BRANDMARK}}`（`assets/brandmark.svg`）。低调、可读、不压主体、不与主标题竞争；获取/回退规则与样式详见 `prompts/brand-mark.md`。进入 `postcard.md` 前若未拿到用户署名，按该文件规则主动询问一次。
 
 ## 工具
 

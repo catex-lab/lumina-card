@@ -129,13 +129,19 @@
       z-index: 6;
       right: 60px;
       bottom: 40px;
-      width: 128px;
-      height: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
       opacity: .42;
       mix-blend-mode: multiply;
       pointer-events: none;
       user-select: none;
+      font-family: Georgia, 'Cormorant Garamond', 'Noto Serif SC', serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #3A3630;
     }
+    .lumina-brandmark img { width: 18px; height: 18px; display: block; }
   </style>
 </head>
 <body>
@@ -150,7 +156,10 @@
       <div class="sub">{{SUB}}</div>
     </div>
     <div class="seal">{{SEAL}}</div>
-    <img class="lumina-brandmark" src="{{BRANDMARK}}" alt="">
+    <div class="lumina-brandmark">
+      <img src="{{BRANDMARK}}" alt="">
+      <span class="brandmark-text">{{SIGNATURE}}</span>
+    </div>
   </div>
 </body>
 </html>

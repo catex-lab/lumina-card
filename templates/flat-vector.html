@@ -98,19 +98,25 @@
     margin-top: 18px;
     line-height: 1.7;
   }
-  /* Lumina Card 品牌签名：独立叠加层，右下安全角，低调可读，不压主体/不抢标题 */
+  /* 用户签名：独立叠加层，右下安全角，低调可读，不压主体/不抢标题 */
   .lumina-brandmark {
     position: absolute;
     z-index: 5;
     right: 30px;
     bottom: 22px;
-    width: 108px;
-    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     opacity: .42;
     mix-blend-mode: multiply;
     pointer-events: none;
     user-select: none;
+    font-family: Georgia, "Times New Roman", "Source Han Sans SC", "PingFang SC", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #3A4A43;
   }
+  .lumina-brandmark img { width: 16px; height: 16px; display: block; }
 </style>
 </head>
 <body>
@@ -124,7 +130,10 @@
       <div class="en">{{EN}}</div>
       <div class="sub">{{SUB}}</div>
     </div>
-    <img class="lumina-brandmark" src="{{BRANDMARK}}" alt="">
+    <div class="lumina-brandmark">
+      <img src="{{BRANDMARK}}" alt="">
+      <span class="brandmark-text">{{SIGNATURE}}</span>
+    </div>
   </div>
 </body>
 </html>

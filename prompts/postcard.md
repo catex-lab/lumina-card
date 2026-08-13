@@ -10,7 +10,7 @@
 2. 套用版式：将图像放入模板指定区域（满版 / 带边 / 分栏 / 偏置留白）。
 3. 加文字：标题（地点 / 主题）+ 可选寄语，严格按模板字体与位置，保证可读。
 4. 边框 / 装饰：按模板添加（classic 细金边 / vintage 做旧边 / minimal 无框 / editorial 网格线）。
-5. 叠加 Lumina Card 品牌签名（详见 `prompts/brand-mark.md`）：将 `assets/brandmark.svg` 作为**独立设计叠加层**放入版式右下安全角，满足低调、可读、不压主体、不与主标题竞争。运行时把 brandmark.svg 复制到与 HTML 同目录并填入 `{{BRANDMARK}}`。
+5. 叠加用户签名（详见 `prompts/brand-mark.md`）：在版式右下安全角放置**独立设计叠加层**，由用户自定义署名 `{{SIGNATURE}}`（昵称/名称/工作室，缺失时回退 `Lumina Card`）。可选前缀光圈图标 `{{BRANDMARK}}`（`assets/brandmark.svg`）。满足低调、可读、不压主体、不与主标题竞争。运行时把 brandmark.svg 复制到与 HTML 同目录并填入 `{{BRANDMARK}}`。
 6. 产出成品：
    - **classic**（内置默认）：用内置 HTML 版式 `templates/classic.html`，填底图、文案与 `{{BRANDMARK}}` 后渲染 / 截图交付（中文清晰可控）。
    - **silhouette**（内置）：用内置 HTML 版式 `templates/silhouette.html`，填底图、文案与 `{{BRANDMARK}}` 后渲染 / 截图交付（双色剪影、大留白、厚重扁平）。
@@ -33,4 +33,4 @@
 - 文字可读、无溢出 / 重叠、位置符合模板。
 - 边框 / 装饰符合模板。
 - 整体美观、主体突出、一眼看懂「讲什么」。
-- 品牌签名低调可读、未压主体、未与标题竞争。
+- 用户签名低调可读、未压主体、未与标题竞争。

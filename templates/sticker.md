@@ -22,7 +22,7 @@
 2. 贴纸居中偏上，下方留足空间给标题。
 3. 明信片卡片整体用大圆角（24–32px），内嵌浅色描边，模拟贴纸卡片质感。
 4. 顶部可加三个彩色小圆点，暗示贴纸册/手账氛围。
-5. 品牌签名放在右下角，opacity 0.42，不与可爱主标题竞争。
+5. 用户签名放在右下角，opacity 0.42，不与可爱主标题竞争。
 
 ## ImageGen 图生图提示词（参考）
 > Transform this photo into a cute die-cut sticker illustration with a thick white die-cut border outline around the whole subject, clean solid pastel background, rounded cartoon forms, gentle cheerful colors, subtle drop shadow under the sticker, no texture, no text, no frame.
@@ -34,7 +34,8 @@
 - `{{TITLE}}`：主标题（城市名/主题）
 - `{{EN}}`：英文副标题
 - `{{SUB}}`：小字文案
-- `{{BRANDMARK}}`：`assets/brandmark.svg` 路径
+- `{{SIGNATURE}}`：用户自定义署名（昵称/名称/工作室，缺失回退 `Lumina Card`）
+- `{{BRANDMARK}}`：`assets/brandmark.svg` 光圈图标路径（可选前缀，与签名文字同现）
 
 ## 输出规格
 - 明信片竖版 2:3

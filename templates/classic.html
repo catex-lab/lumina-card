@@ -4,7 +4,7 @@
   使用方式：
     1) 把 {{IMAGE}} 换成清理+调色后的底图文件名（与本 html 同目录）
     2) 把 {{TITLE}} {{EN}} {{SUB}} 换成文案
-    3) 把 {{BRANDMARK}} 换成 assets/brandmark.svg（复制到本 html 同目录或填绝对路径）
+    3) 把 {{SIGNATURE}} 换成用户署名（昵称/名称/工作室，缺失用 Lumina Card）；{{BRANDMARK}} 换成 assets/brandmark.svg（可选光圈图标）
     4) 用浏览器打开 / 截图 / 打印（@page 已设 A5）
   配色：主底 #FBF7F0 · 边框 #C9A24B · 文字 #3A2E25 · 强调 #B5462F
 -->
@@ -30,19 +30,25 @@
     box-sizing: border-box;
     position: relative;
   }
-  /* Lumina Card 品牌签名：独立叠加层，右下页边，低调可读，不压主体/不抢标题 */
+  /* 用户签名：独立叠加层，右下页边，低调可读，不压主体/不抢标题 */
   .lumina-brandmark {
     position: absolute;
     z-index: 5;
     right: 22px;
     bottom: 16px;
-    width: 112px;
-    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     opacity: .42;
     mix-blend-mode: multiply;
     pointer-events: none;
     user-select: none;
+    font-family: Georgia, "Times New Roman", "Songti SC", serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #2A2A2A;
   }
+  .lumina-brandmark img { width: 16px; height: 16px; display: block; }
   .photo {
     width: 100%;
     display: block;
@@ -79,7 +85,10 @@
       <div class="en">{{EN}}</div>
       <div class="sub">{{SUB}}</div>
     </div>
-    <img class="lumina-brandmark" src="{{BRANDMARK}}" alt="">
+    <div class="lumina-brandmark">
+      <img src="{{BRANDMARK}}" alt="">
+      <span class="brandmark-text">{{SIGNATURE}}</span>
+    </div>
   </div>
 </body>
 </html>
