@@ -1,6 +1,6 @@
 ---
 name: lumina-card
-description: 把任意照片变成可印刷/可分享的明信片（中英双语 skill）。当用户上传一张图并说「做成明信片 / 生成贺卡 / 照片转明信片 / postcard / 旅行照做成卡片」时触发。流水线：识别原图 → 锁定主体 → 构图引擎(比例安全转换) → 高清清理 → 高级调色 → 套用模板设计 → 最终验收。Built-in styles: classic（暖白细金边）、silhouette（双色剪影）、sticker（贴纸风）。
+description: 把任意照片变成可印刷/可分享的明信片（中英双语 skill）。当用户上传一张图并说「做成明信片 / 生成贺卡 / 照片转明信片 / postcard / 旅行照做成卡片」时触发。流水线：识别原图 → 锁定主体 → 构图精修(比例安全转换+高清清理) → 艺术变换(油画/水彩/水墨/素描/插画/复古) → 高级调色 → 版式排版(套用模板+用户签名) → 最终验收。Built-in styles: classic（暖白细金边）、silhouette（双色剪影）、sticker（贴纸风）。
 agent_created: true
 license: MIT
 author: catex-lab
@@ -20,28 +20,28 @@ author: catex-lab
 
 1. `prompts/analyzer.md` — 识别原图：判断场景类型、主体、光照、缺陷，产出诊断报告
 2. `prompts/subject-lock.md` — 锁定主体：明确「这张明信片讲什么」，框定视觉焦点与安全区 `subject_bbox`
-3. `prompts/composition-engine.md` — 构图引擎：把任意比例原图安全转换为目标比例（默认 2:3），主体关键部分 100% 不被裁掉；优先无损安全裁切，不足则 AI 扩图
-4. `prompts/retouch.md` — 高清 / 清理：在构图锁定图上放大、降噪、去干扰物、校正（不再做比例裁切）
+3. `prompts/compretouch.md` — 构图精修：合并原构图引擎与精修——把任意比例原图安全转换为目标比例（默认 2:3），主体关键部分 100% 不被裁掉（优先无损安全裁切，不足则 AI 扩图）；随后在构图锁定图上放大、降噪、去干扰物、校正
+4. `prompts/art-transform.md` — 艺术变换：把底图重绘为选定绘画媒介（油画 / 水彩 / 水墨 / 素描 / 插画 / 复古），主体不变形；用户未选默认水彩
 5. `prompts/color.md` — 高级调色：建立统一、有情绪的色调，服务整体调性
-6. `prompts/postcard.md` — 明信片设计：套用模板、排版、加文字与边框，并叠加用户自定义签名（见 `prompts/brand-mark.md`，署名来自 `{{SIGNATURE}}`，缺失回退 `Lumina Card`）
+6. `prompts/post.md` — 版式排版：套用模板、排版、加文字与边框，并叠加用户自定义签名（见 `prompts/brand-mark.md`，署名来自 `{{SIGNATURE}}`，缺失回退 `Lumina Card`）
 7. `prompts/qc.md` — 最终验收：逐项核对，不达标打回对应工序
 
 每一道工序读取上一道工序的产物，输出结构化结果给下一道。**上一道不达标，绝不允许进下一道。**
 
 ## 全局规则
 
-- **确认节点**：进入 `postcard.md` 之前，必须与用户确认两件事——① 锁定的主体；② 选用的模板。若用户早已明确指定（如「用 vintage 模板做我家猫」），可跳过确认直接执行。
+- **确认节点**：进入 `post.md` 之前，必须与用户确认三件事——① 锁定的主体；② 选用的模板；③ 艺术变换媒介（油画 / 水彩 / 水墨 / 素描 / 插画 / 复古，默认水彩）。若用户早已明确指定（如「用 vintage 模板 + 水墨风做我家猫」），可跳过确认直接执行。
 - **内置成品模板**见 `templates/`：`classic`（默认）/ `silhouette` / `sticker`。另有候选风格 `kawaii` / `geometric` / `flat-vector` / `fashion` / `gongbi`（模板已备，尚未内置，按需启用）。用户未指定模板时默认 `classic`。
 - **分辨率底线**：所有生成产物短边 ≥ 1600px，满足基础印刷要求。
 - **文字文案**：标题/寄语默认用用户提供的文案；缺失时给出 2–3 个候选并请用户定，不擅自编造大段文字。
 - **质量门禁**：任何一道工序不达标，必须打回上一步或重做，绝不带着问题进下一关。
 - **一次只讲一个点**：每张明信片主体唯一、明确，不贪多。
-- **用户签名（强制）**：成品必须叠加用户自定义署名作为独立设计层——默认占位 `{{SIGNATURE}}`（用户昵称/名称/工作室，缺失时回退 `Lumina Card`）；可选前缀光圈图标 `{{BRANDMARK}}`（`assets/brandmark.svg`）。低调、可读、不压主体、不与主标题竞争；获取/回退规则与样式详见 `prompts/brand-mark.md`。进入 `postcard.md` 前若未拿到用户署名，按该文件规则主动询问一次。
+- **用户签名（强制）**：成品必须叠加用户自定义署名作为独立设计层——默认占位 `{{SIGNATURE}}`（用户昵称/名称/工作室，缺失时回退 `Lumina Card`）；可选前缀光圈图标 `{{BRANDMARK}}`（`assets/brandmark.svg`）。低调、可读、不压主体、不与主标题竞争；获取/回退规则与样式详见 `prompts/brand-mark.md`。进入 `post.md` 前若未拿到用户署名，按该文件规则主动询问一次。
 
 ## 工具
 
-- **图像生成 / 重绘 / 扩图**：ImageGen（图生图用于 retouch / color / postcard 阶段；扩图用于 composition-engine 策略 B）
-- **几何裁切**：Pillow（`Image.crop`，composition-engine 策略 A 无损安全裁切）
+- **图像生成 / 重绘 / 扩图**：ImageGen（图生图用于 compretouch / art-transform / color / post 阶段；扩图用于 compretouch 策略 B）
+- **几何裁切**：Pillow（`Image.crop`，compretouch 策略 A 无损安全裁切）
 - **预览与交付**：Visualizer（内联预览）+ `present_files`（最终交付）
 
 ## 产物约定

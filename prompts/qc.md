@@ -2,7 +2,7 @@
 
 **目标**：对成品逐项核对，全部通过才可交付；不达标打回对应工序。
 
-**输入**：postcard 成品 + 各工序报告（analyzer / subject-lock / retouch / color）。
+**输入**：post 成品 + 各工序报告（analyzer / subject-lock / compretouch / art-transform / color）。
 
 **检查清单（逐条核对）**：
 
@@ -18,11 +18,12 @@
 
 | 问题类型 | 打回到 |
 | --- | --- |
-| 分辨率 / 清晰度 / 畸变 | `retouch.md` |
+| 分辨率 / 清晰度 / 畸变 / 比例裁切 | `compretouch.md` |
+| 画风不符 / 主体变形（艺术化问题） | `art-transform.md` |
 | 色调 / 脏色 / 情绪不符 | `color.md` |
-| 排版 / 文字 / 边框 | `postcard.md` |
+| 排版 / 文字 / 边框 / 签名 | `post.md` |
 | 主体丢失 / 焦点错误 | `subject-lock.md` |
 
-**交付**：全部打勾后，用 `present_files` 交付成品，并附一句话说明——用了哪套模板、主题是什么（如「vintage 模板 · 京都秋日」）。
+**交付**：全部打勾后，用 `present_files` 交付成品，并附一句话说明——用了哪套模板、哪种艺术媒介、主题是什么（如「vintage 模板 · 水彩 · 京都秋日」）。
 
 若任一项不达标，明确指出哪一项、为什么，并打回对应工序重做，不带着问题交付。

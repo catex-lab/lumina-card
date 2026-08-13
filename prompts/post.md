@@ -1,8 +1,8 @@
-# 工序 5 — 明信片设计 (Postcard)
+# 工序 6 — 版式排版 (Post)
 
-**目标**：把调色图套用选定模板，完成排版、边框、文字，产出最终明信片。
+**目标**：把 `color` 调色后的成品图，套用选定模板，完成版式、边框、文字与用户签名，产出最终明信片。**本工序只负责「装裱」——艺术化（绘画媒介重绘）已在 `art-transform` 完成，本工序不再改变图像本身的画风。**
 
-**输入**：color 图 + 模板规范（`templates/<name>.md`）+ 用户文案。
+**输入**：color 图 + 模板规范（`templates/<name>.md`）+ 用户文案 + 用户署名（`{{SIGNATURE}}`）。
 
 **步骤**：
 
@@ -12,9 +12,9 @@
 4. 边框 / 装饰：按模板添加（classic 细金边 / vintage 做旧边 / minimal 无框 / editorial 网格线）。
 5. 叠加用户签名（详见 `prompts/brand-mark.md`）：在版式右下安全角放置**独立设计叠加层**，由用户自定义署名 `{{SIGNATURE}}`（昵称/名称/工作室，缺失时回退 `Lumina Card`）。可选前缀光圈图标 `{{BRANDMARK}}`（`assets/brandmark.svg`）。满足低调、可读、不压主体、不与主标题竞争。运行时把 brandmark.svg 复制到与 HTML 同目录并填入 `{{BRANDMARK}}`。
 6. 产出成品：
-   - **classic**（内置默认）：用内置 HTML 版式 `templates/classic.html`，填底图、文案与 `{{BRANDMARK}}` 后渲染 / 截图交付（中文清晰可控）。
-   - **silhouette**（内置）：用内置 HTML 版式 `templates/silhouette.html`，填底图、文案与 `{{BRANDMARK}}` 后渲染 / 截图交付（双色剪影、大留白、厚重扁平）。
-   - **sticker**（内置）：用内置 HTML 版式 `templates/sticker.html`，填底图、文案与 `{{BRANDMARK}}` 后渲染 / 截图交付（模切贴纸插画、干净纯色底、大圆角可爱风）。
+   - **classic**（内置默认）：用内置 HTML 版式 `templates/classic.html`，填底图、文案与 `{{SIGNATURE}}`/`{{BRANDMARK}}` 后渲染 / 截图交付（中文清晰可控）。
+   - **silhouette**（内置）：用内置 HTML 版式 `templates/silhouette.html`，填底图、文案与 `{{SIGNATURE}}`/`{{BRANDMARK}}` 后渲染 / 截图交付（双色剪影、大留白、厚重扁平）。
+   - **sticker**（内置）：用内置 HTML 版式 `templates/sticker.html`，填底图、文案与 `{{SIGNATURE}}`/`{{BRANDMARK}}` 后渲染 / 截图交付（模切贴纸插画、干净纯色底、大圆角可爱风）。
    - **minimal / vintage**（待补版式）：可用 ImageGen 图生图直接合成（无复杂文字时）；若需 HTML 可控文字，补 `templates/<name>.html` 后套用。
 7. 输出明信片成品，进入 `qc.md`。
 
