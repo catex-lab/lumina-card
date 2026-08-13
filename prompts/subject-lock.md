@@ -11,7 +11,8 @@
 | `primary_subject` | 必须保留并突出的唯一主体 |
 | `keep_elements` | 要保留的陪衬（如天空、边框植物、地面倒影） |
 | `remove_elements` | 要去除的干扰（路人、杂物、电线、水印、反光） |
-| `crop_suggestion` | 建议裁切比例与构图（如 3:2 中心构图 / 黄金分割 / 上图下白） |
+| `subject_bbox` | 主体在**原图坐标**的包围盒 `(x1,y1,x2,y2)`，**必须包含关键部分**（建筑顶部 / 人物头部 / 地标尖顶），供 composition-engine 做安全裁切 |
+| `crop_suggestion` | 仅表达**构图意图**（如中心构图 / 黄金分割 / 上图下白）；**不做比例裁切**——比例转换交由 composition-engine 工序执行 |
 | `focal_emphasis` | 如何引导视线（虚化背景 / 提亮主体 / 加深边框 / 留白） |
 
 **步骤**：

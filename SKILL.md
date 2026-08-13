@@ -1,6 +1,6 @@
 ---
 name: lumina-card
-description: 把任意照片变成可印刷/可分享的明信片（中英双语 skill）。当用户上传一张图并说「做成明信片 / 生成贺卡 / 照片转明信片 / postcard / 旅行照做成卡片」时触发。流水线：识别原图 → 锁定主体 → 高清清理 → 高级调色 → 套用模板设计 → 最终验收。Built-in styles: classic（暖白细金边）、silhouette（双色剪影）。
+description: 把任意照片变成可印刷/可分享的明信片（中英双语 skill）。当用户上传一张图并说「做成明信片 / 生成贺卡 / 照片转明信片 / postcard / 旅行照做成卡片」时触发。流水线：识别原图 → 锁定主体 → 构图引擎(比例安全转换) → 高清清理 → 高级调色 → 套用模板设计 → 最终验收。Built-in styles: classic（暖白细金边）、silhouette（双色剪影）。
 agent_created: true
 license: MIT
 author: catex-lab
@@ -8,7 +8,7 @@ author: catex-lab
 
 # Lumina Card · 浮光卡片
 
-把一张普通照片，经过六道工序，变成一张有设计感、可直接印刷或分享的明信片。
+把一张普通照片，经过七道工序，变成一张有设计感、可直接印刷或分享的明信片。
 
 ## 触发场景
 
@@ -19,11 +19,12 @@ author: catex-lab
 ## 工作流（严格按顺序）
 
 1. `prompts/analyzer.md` — 识别原图：判断场景类型、主体、光照、缺陷，产出诊断报告
-2. `prompts/subject-lock.md` — 锁定主体：明确「这张明信片讲什么」，框定视觉焦点
-3. `prompts/retouch.md` — 高清 / 清理：放大、降噪、去干扰物、校正裁切
-4. `prompts/color.md` — 高级调色：建立统一、有情绪的色调，服务整体调性
-5. `prompts/postcard.md` — 明信片设计：套用模板、排版、加文字与边框
-6. `prompts/qc.md` — 最终验收：逐项核对，不达标打回对应工序
+2. `prompts/subject-lock.md` — 锁定主体：明确「这张明信片讲什么」，框定视觉焦点与安全区 `subject_bbox`
+3. `prompts/composition-engine.md` — 构图引擎：把任意比例原图安全转换为目标比例（默认 2:3），主体关键部分 100% 不被裁掉；优先无损安全裁切，不足则 AI 扩图
+4. `prompts/retouch.md` — 高清 / 清理：在构图锁定图上放大、降噪、去干扰物、校正（不再做比例裁切）
+5. `prompts/color.md` — 高级调色：建立统一、有情绪的色调，服务整体调性
+6. `prompts/postcard.md` — 明信片设计：套用模板、排版、加文字与边框
+7. `prompts/qc.md` — 最终验收：逐项核对，不达标打回对应工序
 
 每一道工序读取上一道工序的产物，输出结构化结果给下一道。**上一道不达标，绝不允许进下一道。**
 
@@ -38,7 +39,8 @@ author: catex-lab
 
 ## 工具
 
-- **图像生成 / 重绘**：ImageGen（图生图用于 retouch / color / postcard 阶段）
+- **图像生成 / 重绘 / 扩图**：ImageGen（图生图用于 retouch / color / postcard 阶段；扩图用于 composition-engine 策略 B）
+- **几何裁切**：Pillow（`Image.crop`，composition-engine 策略 A 无损安全裁切）
 - **预览与交付**：Visualizer（内联预览）+ `present_files`（最终交付）
 
 ## 产物约定
