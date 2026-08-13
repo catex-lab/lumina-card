@@ -29,11 +29,13 @@ git clone https://github.com/catex-lab/lumina-card.git <你的项目>/.workbuddy
 
 ## 🖼️ 效果展示
 
-> 原图：上海 · 东方明珠天际线
+> 示例原图：上海 · 东方明珠天际线（照片版权归拍摄者所有，详见文末版权声明）
 
-| `classic`（暖白底细金边） | `silhouette`（双色扁平剪影） |
-| --- | --- |
-| ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) |
+| 原图 | `classic`（暖白底细金边） | `silhouette`（双色扁平剪影） |
+| --- | --- | --- |
+| ![原图](./showcase/source-shanghai.jpg) | ![classic](./showcase/showcase-classic.png) | ![silhouette](./showcase/showcase-silhouette.png) |
+
+> 更多示例原图见 [`showcase/source-bund.jpg`](./showcase/source-bund.jpg)。
 
 ## 🎨 内置风格
 
@@ -55,4 +57,6 @@ git clone https://github.com/catex-lab/lumina-card.git <你的项目>/.workbuddy
 
 ## 📄 许可证
 
-MIT © 2026 catex-lab
+**Skill 代码**：MIT © 2026 catex-lab
+
+**示例照片版权**：`showcase/` 目录下的所有示例照片（`source-shanghai.jpg` / `source-bund.jpg` 及由其生成的成品图）版权归拍摄者 **catex-lab** 所有（© 2026 catex-lab），仅用于本仓库效果展示，**禁止擅自商用、转载或二次分发**。如需使用请先联系作者。
