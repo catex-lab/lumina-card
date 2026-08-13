@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+  Lumina Card · 内置 kawaii（可爱水彩）风格版式（成品级）
+  柔和马卡龙色 + 圆润贴纸感 + 手写体，治愈系童话绘本风。
+  使用方式：
+    1) 把 {{IMAGE}} 换成水彩底图文件名（与本 html 同目录）
+    2) 把 {{EYEBROW}} {{TITLE}} {{EN}} {{SUB}} 换成文案
+    3) 用浏览器打开 / 截图 / 打印（@page 已设 A5）
+  配色：底 #FFF9F7 · 卡片 #FFFDFB · 主粉 #FFB7C5 · 薄荷 #B8E0D2 · 文字 #5A4A55
+  底图要求：kawaii watercolor 风格底图（柔和水彩、圆润造型、浅底），由 ImageGen 在 color 阶段生成。
+-->
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}} · 明信片</title>
+<style>
+  @page { size: A5; margin: 0; }
+  body {
+    margin: 0;
+    background: #FFF9F7;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    font-family: "LXGW WenKai", "PingFang SC", "Microsoft YaHei", "KaiTi", serif;
+  }
+  .postcard {
+    width: 600px;
+    min-height: 848px;
+    background: #FFFDFB;
+    border-radius: 36px;
+    color: #5A4A55;
+    padding: 38px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(255, 183, 197, 0.18);
+    position: relative;
+    overflow: hidden;
+  }
+  .postcard::before,
+  .postcard::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 183, 197, 0.22);
+    z-index: 0;
+  }
+  .postcard::before { width: 160px; height: 160px; top: -60px; right: -40px; }
+  .postcard::after  { width: 100px; height: 100px; bottom: 80px; left: -30px; background: rgba(184, 224, 210, 0.28); }
+  .decor {
+    position: absolute;
+    z-index: 0;
+  }
+  .dot1 { width: 14px; height: 14px; border-radius: 50%; background: #FFD6E0; top: 60px; left: 56px; }
+  .dot2 { width: 10px; height: 10px; border-radius: 50%; background: #B8E0D2; top: 100px; right: 64px; }
+  .dot3 { width: 18px; height: 18px; border-radius: 50%; background: #FFF0B5; bottom: 180px; right: 52px; }
+  .eyebrow {
+    position: relative;
+    z-index: 1;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #C4A6B2;
+    margin-bottom: 22px;
+    font-weight: 600;
+  }
+  .photo-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(90, 74, 85, 0.08);
+  }
+  .photo {
+    width: 100%;
+    display: block;
+  }
+  .caption {
+    position: relative;
+    z-index: 1;
+    margin-top: 34px;
+    padding: 0 12px;
+  }
+  .title {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    line-height: 1.15;
+    color: #5A4A55;
+  }
+  .title span {
+    color: #FF9EB0;
+  }
+  .en {
+    font-family: "Brush Script MT", "Pacifico", "Comic Sans MS", cursive;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #A3D2C2;
+    margin-top: 14px;
+  }
+  .sub {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #C4A6B2;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+  .dotted {
+    position: absolute;
+    z-index: 1;
+    width: 72px;
+    height: 72px;
+    border: 3px dashed #FFD6E0;
+    border-radius: 50%;
+    bottom: 58px;
+    right: 52px;
+    opacity: 0.7;
+  }
+  /* Lumina Card 品牌签名：独立叠加层，右下安全角，低调可读，不压主体/不抢标题 */
+  .lumina-brandmark {
+    position: absolute;
+    z-index: 6;
+    right: 30px;
+    bottom: 22px;
+    width: 104px;
+    height: auto;
+    opacity: .42;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+  <div class="postcard">
+    <div class="decor dot1"></div>
+    <div class="decor dot2"></div>
+    <div class="decor dot3"></div>
+    <div class="dotted"></div>
+    <div class="eyebrow">{{EYEBROW}}</div>
+    <div class="photo-wrap">
+      <img class="photo" src="{{IMAGE}}" alt="{{TITLE}}">
+    </div>
+    <div class="caption">
+      <div class="title">{{TITLE}}</div>
+      <div class="en">{{EN}}</div>
+      <div class="sub">{{SUB}}</div>
+    </div>
+    <img class="lumina-brandmark" src="{{BRANDMARK}}" alt="">
+  </div>
+</body>
+</html>

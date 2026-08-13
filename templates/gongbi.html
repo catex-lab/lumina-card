@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Card · Gongbi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F4EFE2;
+      --paper-dark: #EAE3D4;
+      --ink: #3A3630;
+      --ink-light: #6B655C;
+      --gold: #B9A06B;
+      --seal: #B23A2E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #DCD5C5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .card {
+      width: 900px;
+      height: 1100px;
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+      background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 80%, rgba(185,160,107,0.05) 0%, transparent 50%);
+    }
+    .frame {
+      position: absolute;
+      top: 46px; left: 46px; right: 46px; bottom: 46px;
+      border: 1px solid var(--gold);
+    }
+    .frame::after {
+      content: "";
+      position: absolute;
+      top: 10px; left: 10px; right: 10px; bottom: 10px;
+      border: 1px solid rgba(58,54,48,0.15);
+    }
+    .image-wrap {
+      position: absolute;
+      top: 110px;
+      left: 110px;
+      right: 110px;
+      bottom: 320px;
+      background-image: url("{{IMAGE}}");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+    }
+    .text-area {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 116px;
+      text-align: center;
+      padding: 0 120px;
+    }
+    .eyebrow {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 54px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink-light);
+      margin-bottom: 22px;
+      letter-spacing: 0.08em;
+    }
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 18px;
+    }
+    .sub {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink-light);
+      letter-spacing: 0.14em;
+    }
+    .seal {
+      position: absolute;
+      right: 104px;
+      bottom: 118px;
+      width: 56px;
+      height: 56px;
+      background: var(--seal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #F4EFE2;
+      font-family: 'Noto Serif SC', serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      text-align: center;
+      padding: 6px;
+      opacity: 0.92;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.25);
+    }
+    .lumina-brandmark {
+      position: absolute;
+      z-index: 6;
+      right: 60px;
+      bottom: 40px;
+      width: 128px;
+      height: auto;
+      opacity: .42;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="frame"></div>
+    <div class="image-wrap"></div>
+    <div class="text-area">
+      <div class="eyebrow">{{EYEBROW}}</div>
+      <div class="title">{{TITLE}}</div>
+      <div class="en">{{EN}}</div>
+      <div class="divider"></div>
+      <div class="sub">{{SUB}}</div>
+    </div>
+    <div class="seal">{{SEAL}}</div>
+    <img class="lumina-brandmark" src="{{BRANDMARK}}" alt="">
+  </div>
+</body>
+</html>
