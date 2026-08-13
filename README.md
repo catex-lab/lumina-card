@@ -1,3 +1,7 @@
+# Lumina Card · 浮光卡片
+
+[![Listed on CATAITO](https://img.shields.io/badge/Listed%20on-CATAITO-6C5CE7?style=flat-square)](https://cataito.com/en/skills/lumina-card)
+
 # 浮光卡片 · Lumina Card
 
 > 把任意照片，经六道工序，变成有设计感、可直接印刷或分享的明信片。
