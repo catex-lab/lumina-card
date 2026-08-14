@@ -6,7 +6,7 @@ English ｜ [简体中文](./README.md)
 
 ## ✨ Features
 
-- **7-step pipeline**: analyze → lock subject → composition+retouch (safe aspect-ratio + cleanup) → art transform (oil/watercolor/watercolor-silhouette/ink/sketch/illustration/vintage) → color → post (template + signature) → QC
+- **7-step pipeline**: analyze → lock subject → composition+retouch (safe aspect-ratio + cleanup) → art transform (oil/watercolor/watercolor-silhouette/ink/sketch/illustration/vintage) → color → post (template) → QC
 - **Built-in styles**: `classic` (warm white + gold edge, default), `silhouette` (two-tone flat), `sticker` (die-cut sticker)
 - **Extensible**: drop a `<name>.md` (+ optional `<name>.html`) into `templates/` — no core changes needed
 - **Bilingual**: triggers on both English and Chinese commands

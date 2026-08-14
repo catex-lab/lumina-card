@@ -13,7 +13,7 @@
 | `lighting` | 自然光 / 室内光 / 逆光 / 夜景 / 混合，整体明暗 |
 | `mood` | 宁静 / 活力 / 怀旧 / 都市 / 治愈 等情绪标签 |
 | `defects` | 问题清单：模糊、噪点、过曝/欠曝、杂物、倾斜、水印、低分辨率 |
-| `suggested_template` | 根据场景推荐模板（classic / minimal / vintage / editorial） |
+| `suggested_template` | 根据场景推荐模板（classic / silhouette / sticker） |
 | `notes` | 其他观察（构图、色彩倾向、特殊亮点） |
 
 **步骤**：
